@@ -95,14 +95,7 @@
     <Content Include="Index.cshtml" />
     <Content Include="Link.cshtml" />
     <Content Include="News.cshtml" />
-    <Content Include="App_Data\Wallpapers\cookie.log" />
-    <Content Include="App_Data\Wallpapers\hakusai_WP_1.log" />
-    <Content Include="App_Data\Wallpapers\hakusai_WP_2.log" />
-    <Content Include="App_Data\Wallpapers\hakusai_WP_3.log" />
-    <Content Include="App_Data\Wallpapers\hakusai_WP_4.log" />
-    <Content Include="App_Data\Wallpapers\hakusai_WP_5.log" />
     <Content Include="App_Data\Wallpapers\hakusai_WP_5.zip" />
-    <Content Include="App_Data\Wallpapers\hakusai_WP_6.log" />
     <Content Include="App_Data\Wallpapers\hakusai_WP_6.zip" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <Content Include="Recruitment.cshtml" />
