@@ -1,0 +1,48 @@
+﻿/* サイドメニューが存在するページに適用するCSS */
+
+h1 {
+    margin: 10px 0px;
+}
+
+h2 {
+    margin: 3px 0px;
+}
+
+#sidemenu {
+    width: 170px;
+    float: left;
+    line-height: 1.8em;
+    padding: 100px 0px 30px 20px;
+}
+
+    #sidemenu ul {
+        list-style: none;
+        margin-bottom: 10px;
+    }
+
+    #sidemenu li {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #56c74c;
+    }
+
+    #sidemenu a:link {
+        color: #999999;
+    }
+
+    #sidemenu a:hover {
+        color: #56c74c;
+        text-decoration: underline;
+    }
+
+#main {
+    width: 720px;
+    float: right;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 60px;
+}
+
+    #main > img {
+        width: 600px;
+    }

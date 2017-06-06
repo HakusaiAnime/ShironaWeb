@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ShironaWeb</RootNamespace>
     <AssemblyName>ShironaWeb</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,14 +51,13 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
@@ -74,27 +74,143 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Arasuji.cshtml" />
+    <Content Include="Butai.cshtml" />
+    <Content Include="Cast.cshtml" />
+    <Content Include="Character.cshtml" />
+    <Content Include="Contact.cshtml" />
+    <Content Include="Guide.cshtml" />
+    <Content Include="Index.cshtml" />
+    <Content Include="Link.cshtml" />
+    <Content Include="News.cshtml" />
+    <Content Include="App_Data\Wallpapers\cookie.log" />
+    <Content Include="App_Data\Wallpapers\hakusai_WP_1.log" />
+    <Content Include="App_Data\Wallpapers\hakusai_WP_2.log" />
+    <Content Include="App_Data\Wallpapers\hakusai_WP_3.log" />
+    <Content Include="App_Data\Wallpapers\hakusai_WP_4.log" />
+    <Content Include="App_Data\Wallpapers\hakusai_WP_5.log" />
+    <Content Include="App_Data\Wallpapers\hakusai_WP_5.zip" />
+    <Content Include="App_Data\Wallpapers\hakusai_WP_6.log" />
+    <Content Include="App_Data\Wallpapers\hakusai_WP_6.zip" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <Content Include="Recruitment.cshtml" />
+    <Content Include="Special_Block.cshtml" />
+    <Content Include="Special_Questionnaire.cshtml" />
+    <Content Include="Staff.cshtml" />
+    <Content Include="Story.cshtml" />
+    <Content Include="WallpaperLog.cshtml" />
+    <Content Include="Wallpaper.cshtml" />
+    <Content Include="WallpaperDl.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="_Layout.cshtml" />
+    <Content Include="_PageStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="character_shirona.html" />
+    <Content Include="Content\Character.css" />
+    <Content Include="Content\Contact.css" />
+    <Content Include="Content\Navi.js" />
+    <Content Include="Content\Page.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\Special\Block\b2.swf" />
+    <Content Include="Content\Special\Block\shirona.txt" />
+    <Content Include="Content\Top.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="guide.html" />
+    <Content Include="Images\Arasuji\arasuji_1.png" />
+    <Content Include="Images\Arasuji\arasuji_2.png" />
+    <Content Include="Images\Arasuji\arasuji_3.png" />
+    <Content Include="Images\bg.png" />
+    <Content Include="Images\bg_wrapper.png" />
+    <Content Include="Images\Character\eiko.png" />
+    <Content Include="Images\Character\gori.png" />
+    <Content Include="Images\Character\honoka.png" />
+    <Content Include="Images\Character\kanade.png" />
+    <Content Include="Images\Character\matsu.png" />
+    <Content Include="Images\Character\sato.png" />
+    <Content Include="Images\Character\shirona.png" />
+    <Content Include="Images\Character\sokanzu.png" />
+    <Content Include="Images\Character\tomato.png" />
+    <Content Include="Images\Character\voice_0.png" />
+    <Content Include="Images\Character\voice_1.png" />
+    <Content Include="Images\Character\voice_2.png" />
+    <Content Include="Images\Character\voice_3.png" />
+    <Content Include="Images\Character\yamamoto.png" />
+    <Content Include="Images\Character\yukari.png" />
+    <Content Include="Images\junbi.png" />
+    <Content Include="Images\Link\link.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\Navi\link_1.png" />
+    <Content Include="Images\Navi\link_2.png" />
+    <Content Include="Images\Navi\link_3.png" />
+    <Content Include="Images\Navi\link_4.png" />
+    <Content Include="Images\Navi\link_5.png" />
+    <Content Include="Images\Navi\link_6.png" />
+    <Content Include="Images\Navi\link_7.png" />
+    <Content Include="Images\Navi\link_8.png" />
+    <Content Include="Images\Navi\visit_1.png" />
+    <Content Include="Images\Navi\visit_2.png" />
+    <Content Include="Images\Navi\visit_3.png" />
+    <Content Include="Images\Navi\visit_4.png" />
+    <Content Include="Images\Navi\visit_5.png" />
+    <Content Include="Images\Navi\visit_6.png" />
+    <Content Include="Images\Navi\visit_7.png" />
+    <Content Include="Images\Navi\visit_8.png" />
+    <Content Include="Images\new.png" />
+    <Content Include="Images\Special\Block\shirona1.jpg" />
+    <Content Include="Images\Special\Block\shirona2.jpg" />
+    <Content Include="Images\Staff\cast.png" />
+    <Content Include="Images\Staff\staff.png" />
+    <Content Include="Images\Story\butai_1.png" />
+    <Content Include="Images\Story\story_1.png" />
+    <Content Include="Images\Top\news.png" />
+    <Content Include="Images\Top\top3.png" />
+    <Content Include="Images\Wallpapers\hakusai_WP_5_thmb.png" />
+    <Content Include="Images\Wallpapers\hakusai_WP_6_thmb.png" />
+    <Content Include="Voices\Eiko\sample1.wav" />
+    <Content Include="Voices\Eiko\sample2.wav" />
+    <Content Include="Voices\Eiko\sample3.wav" />
+    <Content Include="Voices\Gori\sample1.wav" />
+    <Content Include="Voices\Gori\sample2.wav" />
+    <Content Include="Voices\Gori\sample3.wav" />
+    <Content Include="Voices\Honoka\sample1.wav" />
+    <Content Include="Voices\Honoka\sample2.wav" />
+    <Content Include="Voices\Honoka\sample3.wav" />
+    <Content Include="Voices\Kanade\sample1.wav" />
+    <Content Include="Voices\Kanade\sample2.wav" />
+    <Content Include="Voices\Kanade\sample3.wav" />
+    <Content Include="Voices\Matsu\sample1.wav" />
+    <Content Include="Voices\Matsu\sample2.wav" />
+    <Content Include="Voices\Matsu\sample3.wav" />
+    <Content Include="Voices\Shirona\sample1.wav" />
+    <Content Include="Voices\Shirona\sample2.wav" />
+    <Content Include="Voices\Shirona\sample3.wav" />
+    <Content Include="Voices\Tomato\sample1.wav" />
+    <Content Include="Voices\Tomato\sample2.wav" />
+    <Content Include="Voices\Tomato\sample3.wav" />
+    <Content Include="Voices\Yamamoto\sample1.wav" />
+    <Content Include="Voices\Yamamoto\sample2.wav" />
+    <Content Include="Voices\Yamamoto\sample3.wav" />
+    <Content Include="Voices\Yukari\sample1.wav" />
+    <Content Include="Voices\Yukari\sample2.wav" />
+    <Content Include="Voices\Yukari\sample3.wav" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

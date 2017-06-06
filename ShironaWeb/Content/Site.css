@@ -1,0 +1,153 @@
+﻿* {
+    padding: 0px;
+    margin: 0px;
+}
+
+img {
+    border: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-image: url(/Images/bg.png);
+    background-repeat: repeat;
+    font-family: sans-serif;
+    font-size: 75%;
+    line-height: 1.6em;
+    color: #333333;
+    background-attachment: fixed;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.ct {
+    border-top: double #CCCCCC;
+}
+
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#wrapper {
+    width: 980px;
+    height: auto;
+    min-height: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-image: url(/Images/bg_wrapper.png);
+    background-repeat: repeat-y;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #999999;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+a:active {
+    position: relative;
+}
+
+/* header */
+#header {
+    padding: 10px 10px 0px 20px;
+}
+
+#logo img {
+    float: left;
+    display: inline-block;
+    height: 50px;
+}
+
+/* navi */
+
+#navi > ul {
+    list-style: none;
+    float: right;
+}
+
+    #navi > ul > li {
+        margin-top: 5px;
+        margin-right: 5px;
+        position: relative;
+        float: left;
+    }
+
+        #navi > ul > li > a {
+            font-weight: bold;
+            padding-bottom: 7px;
+        }
+
+#navi .ddnavi {
+    position: absolute;
+    top: 26px;
+    left: 0;
+    display: none;
+    opacity: 0;
+    list-style: none;
+}
+
+    #navi .ddnavi > li {
+        position: relative;
+        width: 95px;
+        margin: 0;
+        top: 30px;
+        left: 15px;
+    }
+
+        #navi .ddnavi > li > a {
+            display: block;
+            color: #000;
+            text-decoration: none;
+            padding: 3px 7px 5px;
+            background-color: #FFFFFF;
+            border-left: 5px solid #FFFFFF;
+        }
+
+            #navi .ddnavi > li > a:hover {
+                background-color: #FFFFFF;
+                font-weight: bold;
+                color: #56c74c;
+                border-left: 5px solid #56c74c;
+            }
+
+#navi img {
+    height: 50px;
+}
+
+/* content */
+
+#content {
+}
+
+/* footer */
+
+#footer {
+    background-color: #FFFFFF;
+    clear: both;
+    width: 980px;
+    color: #666666;
+    text-align: center;
+    height: 25px;
+    padding-top: 10px;
+}
+
+
+/* wallpaper */
+.wp {
+    margin: 10px 0;
+}

@@ -1,0 +1,18 @@
+﻿#topface {
+    height: 392px;
+}
+
+    #topface * {
+        width: 980px;
+        z-index: -1;
+    }
+
+#topctt {
+}
+
+.inc {
+    float: left;
+    width: 300px;
+    display: inline-block;
+    margin: 15px 13px;
+}

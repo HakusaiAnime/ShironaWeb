@@ -1,0 +1,11 @@
+﻿#voice {
+	height: 50px;
+	width: 270px;
+	position: relative;
+	top: -155px;
+	padding-left: 30px;
+}
+
+#voice img {
+	padding-right: 5px;
+}

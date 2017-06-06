@@ -1,0 +1,62 @@
+﻿@{
+    var name = Request["name"];
+    string path;
+    string fullName;
+    switch (name)
+    {
+        case "shirona": path = "Shirona"; fullName = "睦梨 白菜"; break;
+        case "yukari": path = "Yukari"; fullName = "奈須 紫"; break;
+        case "kanade": path = "Kanade"; fullName = "宝蓮寺 奏"; break;
+        case "eiko": path = "Eiko"; fullName = "忍迅 栄子"; break;
+        case "honoka": path = "Honoka"; fullName = "喜屋部 穂華"; break;
+        case "sato": path = "Sato"; fullName = "佐藤 空輝"; break;
+        case "matsu": path = "Matsu"; fullName = "松 武雄"; break;
+        case "yamamoto": path = "Yamamoto"; fullName = "山本 昌史"; break;
+        case "gori": path = "Gori"; fullName = "五里 蕉"; break;
+        case "tomato": path = "Tomato"; fullName = "苫川 とまと"; break;
+        default: name = "sokanzu"; path = "Sokanzu"; fullName = "相関図"; break;
+    }
+
+    Page.Title = fullName;
+    Page.VisitId = 4;
+    var imagePath = string.Format("/Images/Character/{0}.png", name);
+}
+
+<link href="/Content/Page.css" rel="stylesheet" />
+<link href="/Content/Character.css" rel="stylesheet" />
+<div class="clear">
+    <div id="sidemenu">
+        <ul>
+            <li><a href="/Character">》相関図</a></li>
+        </ul>
+        <ul>
+            <li><a href="/Character?name=shirona">》睦梨 白菜</a></li>
+            <li><a href="/Character?name=yukari">》奈須 紫</a></li>
+            <li><a href="/Character?name=kanade">》宝蓮寺 奏</a></li>
+            <li><a href="/Character?name=eiko">》忍迅 栄子</a></li>
+            <li><a href="/Character?name=honoka">》喜屋部 穂華</a></li>
+            <li><a href="/Character?name=sato">》佐藤 空輝</a></li>
+            <li><a href="/Character?name=matsu">》松 武雄</a></li>
+            <li><a href="/Character?name=yamamoto">》山本 昌史</a></li>
+            <li><a href="/Character?name=gori">》五里 蕉</a></li>
+            <li><a href="/Character?name=tomato">》苫川 とまと</a></li>
+        </ul>
+    </div>
+
+    <div id="main">
+        <img src="@imagePath" />
+        @if (File.Exists(Server.MapPath(string.Format("~/Voices/{0}/sample1.wav", path))))
+        {
+            <div id="voice">
+                <bgsound id="bgs" src="" loop="1" />
+                <img src="/Images/Character/voice_0.png" width="50" onclick="bgs.src='';">
+                @for (int i = 0; File.Exists(Server.MapPath(string.Format("~/Voices/{0}/sample{1}.wav", path, i + 1))); i++)
+                {
+                    <img src="/Images/Character/voice_@(i + 1).png" width="50" onclick="bgs.src='@string.Format("/Voices/{0}/sample{1}.wav", path, i + 1)';" />
+                }
+                <br>
+                ※サンプルボイス再生はIEのみ対応となります。
+            </div>
+        }
+    </div>
+</div>

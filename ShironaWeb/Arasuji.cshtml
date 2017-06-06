@@ -1,0 +1,32 @@
+﻿@{
+    Page.VisitId = 5;
+
+    // _PageStartであらすじを定義
+    string[] arasujis = Page.Arasujis;
+    var num = UrlData[0].AsInt(arasujis.Length) - 1;
+    if (num < 0 || num >= arasujis.Length) { num = arasujis.Length - 1; }
+
+    Page.Title = "あらすじ" + arasujis[num];
+}
+
+<link href="/Content/Page.css" rel="stylesheet" />
+<div class="clear">
+    <div id="sidemenu">
+        <ul>
+            @for (int i = arasujis.Length - 1; i >= 0; i--)
+            {
+                if (num == i)
+                {
+                    <li>》あらすじ@(arasujis[i])</li>
+                }
+                else
+                {
+                    <li><a href="/Arasuji/@(i + 1)">》あらすじ@(arasujis[i])</a></li>
+                }
+            }
+        </ul>
+    </div>
+    <div id="main">
+        <img src="/Images/Arasuji/arasuji_@(num + 1).png" usemap="#url">
+    </div>
+</div>
