@@ -1,0 +1,130 @@
+﻿@using System.Configuration
+@{
+    Page.Title = "お問合せ";
+    Page.VisitId = 8;
+
+    var sent = false;
+    var error = false;
+
+    if (IsPost)
+    {
+        var mailTo = ConfigurationManager.AppSettings["ContactAddress"];
+        WebMail.SmtpServer = ConfigurationManager.AppSettings["ContactHost"];
+        WebMail.SmtpPort = ConfigurationManager.AppSettings["ContactPort"].AsInt();
+        WebMail.UserName = ConfigurationManager.AppSettings["ContactAddress"];
+        WebMail.Password = ConfigurationManager.AppSettings["ContactPassword"];
+        var mailFrom = Request["From"];
+        var mailConfirmFrom = Request["ConfirmFrom"];
+        var name = Request["Name"];
+        var mailBody = Request["Body"];
+        if (mailFrom.IsEmpty())
+        {
+            ModelState.AddError("From", "メールアドレスに何か入力してください。");
+            error = true;
+        }
+        if (mailFrom != mailConfirmFrom)
+        {
+            ModelState.AddError("ConfirmFrom", "メールアドレス確認用の内容が、メールアドレスと違います。");
+            error = true;
+        }
+        if (mailBody.IsEmpty())
+        {
+            ModelState.AddError("MailBody", "本文には何か入力してください。");
+            error = true;
+        }
+        if (ModelState.IsValid)
+        {
+            try
+            {
+                WebMail.Send(mailTo, string.Format("{0} {1}", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), name), mailBody, mailFrom);
+                sent = true;
+            }
+            catch
+            {
+                ModelState.AddError("From", "エラーが発生しました。メールアドレス等が正しいか確認してください。");
+                error = true;
+            }
+        }
+    }
+}
+
+<link href="/Content/Page.css" rel="stylesheet" />
+<link href="/Content/Contact.css" rel="stylesheet" />
+<div class="clear">
+    <div id="sidemenu">
+        <ul>
+            <li><a href="/Contact">》お問い合わせ</a></li>
+            <li><a href="/Guide">》二次使用に関して</a></li>
+        </ul>
+    </div>
+
+    <div id="main">
+        @if (sent)
+        {
+            <div>
+                <p>
+                    メールが送信されました。ありがとうございます。
+                </p>
+            </div>
+        }
+        @if (error)
+        {
+            <div>
+                @Html.ValidationSummary("以下の問題があります：")
+            </div>
+        }
+        <form id="mailform" method="post" action="">
+            <table border="0" cellspacing="0" cellpadding="0" class="mailform">
+                <tr>
+                    <th>
+                        メールアドレス<span>*</span><p>
+                            e-mail address
+                        </p>
+                    </th>
+                    <td>
+                        <input type="text" name="From" size="50" maxlength="50" class="mf" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        メールアドレス確認用<span>*</span><p>
+                            e-mail address
+                        </p>
+                    </th>
+                    <td>
+                        <input type="text" name="ConfirmFrom" size="50" class="mf" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        お名前<span>*</span><p>
+                            your name
+                        </p>
+                    </th>
+                    <td>
+                        <input type="text" name="Name" size="30" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        ご用件<span>*</span><p>
+                            inquiry body
+                        </p>
+                    </th>
+                    <td>
+                        <textarea name="Body" rows="10" cols="70"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <span>*</span>は必須項目です。
+                    </th>
+                    <td>
+                        <input type="submit" value="メールを送信する" />
+                        <input type="reset" name="reset" value="リセット" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
