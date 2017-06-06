@@ -4,8 +4,7 @@
     {
         title = string.Format("{0} - {1}", Page.Title, title);
     }
-}
-<!DOCTYPE html>
+}<!DOCTYPE html>
 <html>
 <head>
     @if (Page.NoRobot ?? false)
@@ -44,7 +43,7 @@
                         @NaviImg(1, "/News")
                         <ul class="ddnavi">
                             <li><a href="/News">お知らせ</a></li>
-                            @*                            <li><a href="/Recruitment">募集</a></li>*@
+                            @*<li><a href="/Recruitment">募集</a></li>*@
                         </ul>
                     </li>
                     <li>
@@ -88,7 +87,6 @@
                                 }
                             }
                         </ul>
-
                     </li>
                     <li>
                         @NaviImg(6)
@@ -135,7 +133,7 @@
 
 @helper NaviImg(int index, string href = "#")
 {
-    var fullName = string.Format("/Images/Navi/{0}_{1}.png", Page.VisitId == index ? "visit" : "link", index);
+var fullName = string.Format("/Images/Navi/{0}_{1}.png", Page.VisitId == index ? "visit" : "link", index);
     <a href="@href">
         <img src="@fullName" />
     </a>
