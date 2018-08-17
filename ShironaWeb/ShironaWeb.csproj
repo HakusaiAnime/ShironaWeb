@@ -24,6 +24,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -98,7 +99,7 @@
     <Content Include="App_Data\Wallpapers\hakusai_WP_5.zip" />
     <Content Include="App_Data\Wallpapers\hakusai_WP_6.zip" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
-    <Content Include="Recruitment.cshtml" />
+    <Content Include="_Recruitment.cshtml" />
     <Content Include="Special_Block.cshtml" />
     <Content Include="Special_Questionnaire.cshtml" />
     <Content Include="Staff.cshtml" />
